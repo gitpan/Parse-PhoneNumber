@@ -1,4 +1,4 @@
-# $Id: Build.PL,v 1.1 2003/03/26 22:18:03 cwest Exp $
+# $Id: Build.PL,v 1.3 2005/03/15 00:17:30 twilde Exp $
 use strict;
 
 use Module::Build;
@@ -10,4 +10,5 @@ Module::Build->new(
 		'Test::More'    => 0,
 		'Module::Build' => 0,
 	},
+	create_makefile_pl => 'passthrough',
 )->create_build_script;

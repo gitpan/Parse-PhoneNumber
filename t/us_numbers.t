@@ -12,14 +12,32 @@ my $p = Parse::PhoneNumber->new;
 
 isa_ok $p, 'Parse::PhoneNumber';
 
-open GOOD, "$FindBin::Bin/good_numbers.txt"
-	or die "Can't open numbers: $!";
-while ( <GOOD> ) {
-	chomp;
-	my $number = $p->parse( number => $_ );
+my @good = qw(	
+	810-555-9841
+	1-517-842-0924
+	8927908123
+	12480982374
+	+1.342.4234.1501
+	1+823.342.1525
+);
+
+my @bad = qw(
+	1
+	1-------------
+	324-2399
+	234.2381
+	23
+	14876
+	82-231.4198
+);
+	
+	
+	
+for (@good) {
+	my $number = $p->parse( number => $_, assume_us => 1 );
 	if ( $number ) {
 		isa_ok $number,          'Parse::PhoneNumber::Number';
-		like   $number->cc,      qr/^\d{1,3}$/, "Proper CC code: ".$number->cc;
+		is     $number->cc,      1, "Proper CC code: ".$number->cc;
 		is     $number->orig,    $_, "Original number: ".$number->orig;
 		like   $number->num,     qr/^\d+$/, "Original matches: $_";
 		like   $number->opensrs, qr/\+\d+\.\d+(?:x\d+)?/, "Opensrs syntax correct: ".$number->opensrs;
@@ -34,19 +52,19 @@ while ( <GOOD> ) {
 		diag("$_ did not parse, should");
 	}
 }
-close GOOD;
 
-open BAD, "$FindBin::Bin/bad_numbers.txt"
-	or die "Can't open numbers: $!";
-while ( <BAD> ) {
-	chomp;
-	my $number = $p->parse( number => $_ );
-	if ( $number ) {
+for (@bad) {
+	my $number = $p->parse( number => $_, assume_us => 1 );
+
+	if ($number) {
 		fail("$_ is bad");
 		diag("$_ parsed, should not");
 	} else {
-		ok $p->errstr, "Error string set.";
-		is $number, undef, $p->errstr;
+		ok("$_ is bad");
 	}
 }
-close GOOD;
+
+
+__DATA__
+
+
