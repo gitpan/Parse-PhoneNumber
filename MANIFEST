@@ -1,0 +1,8 @@
+Build.PL
+INSTALL
+MANIFEST
+META.yml
+README
+lib/Parse/PhoneNumber.pm
+t/numbers.t
+t/numbers.txt
