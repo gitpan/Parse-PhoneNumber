@@ -1,5 +1,5 @@
 package Parse::PhoneNumber;
-# $Id: PhoneNumber.pm,v 1.5 2003/06/12 16:26:49 cwest Exp $
+# $Id: PhoneNumber.pm,v 1.7 2005/10/31 16:36:48 twilde Exp $
 use strict;
 $^W = 1;
 
@@ -7,7 +7,7 @@ use Carp;
 
 use vars qw[$VERSION $EXT $MINLEN $MIN_US_LENGTH @CCODES];
 
-$VERSION = (qw$Revision: 1.5 $)[1];
+$VERSION = qw(1.5.1);
 $EXT     = qr/\s*(?:(?:ext|ex|xt|x)[\s.:]*(\d+))/i;
 
 $MINLEN        = 7;
@@ -48,7 +48,7 @@ Parse::PhoneNumber - Parse Phone Numbers
 =head1 SYNOPSIS
 
  use Parse::PhoneNumber;
- my $number = Parse::PhoneNumbers->parse( number => $phone );
+ my $number = Parse::PhoneNumber->parse( number => $phone );
  
  print $number->human;
 
@@ -226,10 +226,14 @@ occur.
 =head1 AUTHOR
 
 Casey West <F<casey@geeknest.com>>
+Maintained by Tim Wilde <F<twilde@dyndns.com>>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2003 Casey West <casey@geeknest.com>.  All
-rights reserved.  This program is free software; you can
-redistribute it and/or modify it under the same terms as
-Perl itself.
+Copyright (c) 2003 Casey West <casey@geeknest.com>.
+Portions Copyright (c) 2005 Dynamic Network Services, Inc.
+
+All rights reserved.  
+
+This program is free software; you can redistribute it 
+and/or modify it under the same terms as Perl itself.
