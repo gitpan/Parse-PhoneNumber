@@ -1,5 +1,5 @@
 package Parse::PhoneNumber;
-# $Id: PhoneNumber.pm,v 1.7 2005/10/31 16:36:48 twilde Exp $
+# $Id: PhoneNumber.pm,v 1.8 2005/10/31 16:42:04 twilde Exp $
 use strict;
 $^W = 1;
 
@@ -7,7 +7,7 @@ use Carp;
 
 use vars qw[$VERSION $EXT $MINLEN $MIN_US_LENGTH @CCODES];
 
-$VERSION = qw(1.5.1);
+$VERSION = qw(1.6);
 $EXT     = qr/\s*(?:(?:ext|ex|xt|x)[\s.:]*(\d+))/i;
 
 $MINLEN        = 7;

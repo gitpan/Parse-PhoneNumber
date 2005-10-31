@@ -1,6 +1,6 @@
 ---
 name: Parse-PhoneNumber
-version: 1.5.1
+version: 1.6
 author:
   - |-
     Casey West <F<casey@geeknest.com>>
@@ -13,8 +13,8 @@ build_requires:
 provides:
   Parse::PhoneNumber:
     file: lib/Parse/PhoneNumber.pm
-    version: 1.5.1
+    version: 1.6
   Parse::PhoneNumber::Number:
     file: lib/Parse/PhoneNumber.pm
-    version: 1.5.1
+    version: 1.6
 generated_by: Module::Build version 0.25
