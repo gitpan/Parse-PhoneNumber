@@ -30,7 +30,7 @@
    "provides" : {
       "Parse::PhoneNumber" : {
          "file" : "lib/Parse/PhoneNumber.pm",
-         "version" : "1.8"
+         "version" : "1.9"
       },
       "Parse::PhoneNumber::Number" : {
          "file" : "lib/Parse/PhoneNumber.pm",
@@ -41,7 +41,10 @@
    "resources" : {
       "license" : [
          "http://dev.perl.org/licenses/"
-      ]
+      ],
+      "repository" : {
+         "url" : "https://github.com/twilde/Parse-PhoneNumber"
+      }
    },
-   "version" : "1.8"
+   "version" : "1.9"
 }

@@ -18,10 +18,11 @@ name: Parse-PhoneNumber
 provides:
   Parse::PhoneNumber:
     file: lib/Parse/PhoneNumber.pm
-    version: 1.8
+    version: 1.9
   Parse::PhoneNumber::Number:
     file: lib/Parse/PhoneNumber.pm
     version: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.8
+  repository: https://github.com/twilde/Parse-PhoneNumber
+version: 1.9
